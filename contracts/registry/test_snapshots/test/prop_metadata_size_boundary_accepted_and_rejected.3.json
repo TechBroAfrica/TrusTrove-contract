@@ -36,32 +36,7 @@
                   "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHK3M"
                 },
                 {
-                  "map": [
-                    {
-                      "key": {
-                        "string": "key_1"
-                      },
-                      "val": {
-                        "string": "value_1"
-                      }
-                    },
-                    {
-                      "key": {
-                        "string": "key_2"
-                      },
-                      "val": {
-                        "string": "value_2"
-                      }
-                    },
-                    {
-                      "key": {
-                        "string": "y__v5TH6x3"
-                      },
-                      "val": {
-                        "string": "da"
-                      }
-                    }
-                  ]
+                  "map": []
                 }
               ]
             }
@@ -124,32 +99,7 @@
                         "symbol": "metadata"
                       },
                       "val": {
-                        "map": [
-                          {
-                            "key": {
-                              "string": "key_1"
-                            },
-                            "val": {
-                              "string": "value_1"
-                            }
-                          },
-                          {
-                            "key": {
-                              "string": "key_2"
-                            },
-                            "val": {
-                              "string": "value_2"
-                            }
-                          },
-                          {
-                            "key": {
-                              "string": "y__v5TH6x3"
-                            },
-                            "val": {
-                              "string": "da"
-                            }
-                          }
-                        ]
+                        "map": []
                       }
                     },
                     {
@@ -516,32 +466,7 @@
                   "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHK3M"
                 },
                 {
-                  "map": [
-                    {
-                      "key": {
-                        "string": "key_1"
-                      },
-                      "val": {
-                        "string": "value_1"
-                      }
-                    },
-                    {
-                      "key": {
-                        "string": "key_2"
-                      },
-                      "val": {
-                        "string": "value_2"
-                      }
-                    },
-                    {
-                      "key": {
-                        "string": "y__v5TH6x3"
-                      },
-                      "val": {
-                        "string": "da"
-                      }
-                    }
-                  ]
+                  "map": []
                 }
               ]
             }
@@ -642,32 +567,7 @@
                     "symbol": "metadata"
                   },
                   "val": {
-                    "map": [
-                      {
-                        "key": {
-                          "string": "key_1"
-                        },
-                        "val": {
-                          "string": "value_1"
-                        }
-                      },
-                      {
-                        "key": {
-                          "string": "key_2"
-                        },
-                        "val": {
-                          "string": "value_2"
-                        }
-                      },
-                      {
-                        "key": {
-                          "string": "y__v5TH6x3"
-                        },
-                        "val": {
-                          "string": "da"
-                        }
-                      }
-                    ]
+                    "map": []
                   }
                 },
                 {

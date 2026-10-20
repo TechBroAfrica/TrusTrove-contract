@@ -3357,12 +3357,17 @@ fn test_trigger_default_rolls_back_when_pool_handle_default_fails() {
     let (env, client, _buyer, invoice_id, pool, _escrow) = setup_confirmed_invoice();
     let before_status = client.get(&invoice_id).status;
     let count_before = client.get_counts();
-    let default_events_before = env.events().all().iter().filter(|(contract, topics, _)| {
-        *contract == client.address && {
-            let topic0: Symbol = Symbol::try_from_val(&env, &topics.get(0).unwrap()).unwrap();
-            topic0 == Symbol::new(&env, "invoice_defaulted")
-        }
-    }).count();
+    let default_events_before = env
+        .events()
+        .all()
+        .iter()
+        .filter(|(contract, topics, _)| {
+            *contract == client.address && {
+                let topic0: Symbol = Symbol::try_from_val(&env, &topics.get(0).unwrap()).unwrap();
+                topic0 == Symbol::new(&env, "invoice_defaulted")
+            }
+        })
+        .count();
     let events_before = env.events().all().len();
 
     MockPoolClient::new(&env, &pool).set_return_values(&false, &true);
@@ -3377,8 +3382,18 @@ fn test_trigger_default_rolls_back_when_pool_handle_default_fails() {
 
     assert!(result.is_err());
     assert_eq!(client.get(&invoice_id).status, before_status);
-    assert_eq!(client.get_by_status(&InvoiceStatus::Confirmed, &0, &MAX_PAGE_SIZE).len(), 1);
-    assert_eq!(client.get_by_status(&InvoiceStatus::Defaulted, &0, &MAX_PAGE_SIZE).len(), 0);
+    assert_eq!(
+        client
+            .get_by_status(&InvoiceStatus::Confirmed, &0, &MAX_PAGE_SIZE)
+            .len(),
+        1
+    );
+    assert_eq!(
+        client
+            .get_by_status(&InvoiceStatus::Defaulted, &0, &MAX_PAGE_SIZE)
+            .len(),
+        0
+    );
     assert!(client.has_status_membership(&InvoiceStatus::Confirmed, &invoice_id));
     assert!(!client.has_status_membership(&InvoiceStatus::Defaulted, &invoice_id));
 
@@ -3402,12 +3417,17 @@ fn test_trigger_default_rolls_back_when_pool_handle_default_fails() {
         );
     }
 
-    let default_events_after = env.events().all().iter().filter(|(contract, topics, _)| {
-        *contract == client.address && {
-            let topic0: Symbol = Symbol::try_from_val(&env, &topics.get(0).unwrap()).unwrap();
-            topic0 == Symbol::new(&env, "invoice_defaulted")
-        }
-    }).count();
+    let default_events_after = env
+        .events()
+        .all()
+        .iter()
+        .filter(|(contract, topics, _)| {
+            *contract == client.address && {
+                let topic0: Symbol = Symbol::try_from_val(&env, &topics.get(0).unwrap()).unwrap();
+                topic0 == Symbol::new(&env, "invoice_defaulted")
+            }
+        })
+        .count();
     assert_eq!(env.events().all().len(), events_before);
     assert_eq!(default_events_after, default_events_before);
 }

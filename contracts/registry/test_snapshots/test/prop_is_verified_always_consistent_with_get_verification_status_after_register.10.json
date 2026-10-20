@@ -36,24 +36,7 @@
                   "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHK3M"
                 },
                 {
-                  "map": [
-                    {
-                      "key": {
-                        "string": "_d8n2I_7G"
-                      },
-                      "val": {
-                        "string": "_y_58"
-                      }
-                    },
-                    {
-                      "key": {
-                        "string": "b1"
-                      },
-                      "val": {
-                        "string": "nxV"
-                      }
-                    }
-                  ]
+                  "map": []
                 }
               ]
             }
@@ -117,24 +100,7 @@
                         "symbol": "metadata"
                       },
                       "val": {
-                        "map": [
-                          {
-                            "key": {
-                              "string": "_d8n2I_7G"
-                            },
-                            "val": {
-                              "string": "_y_58"
-                            }
-                          },
-                          {
-                            "key": {
-                              "string": "b1"
-                            },
-                            "val": {
-                              "string": "nxV"
-                            }
-                          }
-                        ]
+                        "map": []
                       }
                     },
                     {
@@ -501,24 +467,7 @@
                   "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHK3M"
                 },
                 {
-                  "map": [
-                    {
-                      "key": {
-                        "string": "_d8n2I_7G"
-                      },
-                      "val": {
-                        "string": "_y_58"
-                      }
-                    },
-                    {
-                      "key": {
-                        "string": "b1"
-                      },
-                      "val": {
-                        "string": "nxV"
-                      }
-                    }
-                  ]
+                  "map": []
                 }
               ]
             }

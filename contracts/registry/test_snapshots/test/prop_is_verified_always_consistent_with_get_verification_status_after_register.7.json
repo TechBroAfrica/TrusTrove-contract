@@ -36,7 +36,24 @@
                   "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHK3M"
                 },
                 {
-                  "map": []
+                  "map": [
+                    {
+                      "key": {
+                        "string": "_wQykT"
+                      },
+                      "val": {
+                        "string": "KNopcsBJ_E__7P_4"
+                      }
+                    },
+                    {
+                      "key": {
+                        "string": "ng80"
+                      },
+                      "val": {
+                        "string": "8y"
+                      }
+                    }
+                  ]
                 }
               ]
             }
@@ -100,7 +117,24 @@
                         "symbol": "metadata"
                       },
                       "val": {
-                        "map": []
+                        "map": [
+                          {
+                            "key": {
+                              "string": "_wQykT"
+                            },
+                            "val": {
+                              "string": "KNopcsBJ_E__7P_4"
+                            }
+                          },
+                          {
+                            "key": {
+                              "string": "ng80"
+                            },
+                            "val": {
+                              "string": "8y"
+                            }
+                          }
+                        ]
                       }
                     },
                     {
@@ -467,7 +501,24 @@
                   "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHK3M"
                 },
                 {
-                  "map": []
+                  "map": [
+                    {
+                      "key": {
+                        "string": "_wQykT"
+                      },
+                      "val": {
+                        "string": "KNopcsBJ_E__7P_4"
+                      }
+                    },
+                    {
+                      "key": {
+                        "string": "ng80"
+                      },
+                      "val": {
+                        "string": "8y"
+                      }
+                    }
+                  ]
                 }
               ]
             }
