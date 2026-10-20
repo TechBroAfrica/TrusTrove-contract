@@ -39,26 +39,26 @@
                   "map": [
                     {
                       "key": {
-                        "string": "Valg"
+                        "string": "key_1"
                       },
                       "val": {
-                        "string": "qV_Q"
+                        "string": "value_1"
                       }
                     },
                     {
                       "key": {
-                        "string": "e_NAX3v0tU"
+                        "string": "key_2"
                       },
                       "val": {
-                        "string": "vF8aPaU_2aNjr8M4Xh__"
+                        "string": "value_2"
                       }
                     },
                     {
                       "key": {
-                        "string": "u8I_"
+                        "string": "y__v5TH6x3"
                       },
                       "val": {
-                        "string": "Qjh8Q_s42C"
+                        "string": "da"
                       }
                     }
                   ]
@@ -127,26 +127,26 @@
                         "map": [
                           {
                             "key": {
-                              "string": "Valg"
+                              "string": "key_1"
                             },
                             "val": {
-                              "string": "qV_Q"
+                              "string": "value_1"
                             }
                           },
                           {
                             "key": {
-                              "string": "e_NAX3v0tU"
+                              "string": "key_2"
                             },
                             "val": {
-                              "string": "vF8aPaU_2aNjr8M4Xh__"
+                              "string": "value_2"
                             }
                           },
                           {
                             "key": {
-                              "string": "u8I_"
+                              "string": "y__v5TH6x3"
                             },
                             "val": {
-                              "string": "Qjh8Q_s42C"
+                              "string": "da"
                             }
                           }
                         ]
@@ -169,6 +169,118 @@
                       }
                     }
                   ]
+                }
+              }
+            },
+            "ext": "v0"
+          },
+          2000000
+        ]
+      ],
+      [
+        {
+          "contract_data": {
+            "contract": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2KM",
+            "key": {
+              "vec": [
+                {
+                  "symbol": "ProfileCount"
+                },
+                {
+                  "vec": [
+                    {
+                      "symbol": "Issuer"
+                    }
+                  ]
+                }
+              ]
+            },
+            "durability": "persistent"
+          }
+        },
+        [
+          {
+            "last_modified_ledger_seq": 0,
+            "data": {
+              "contract_data": {
+                "ext": "v0",
+                "contract": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2KM",
+                "key": {
+                  "vec": [
+                    {
+                      "symbol": "ProfileCount"
+                    },
+                    {
+                      "vec": [
+                        {
+                          "symbol": "Issuer"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "durability": "persistent",
+                "val": {
+                  "u32": 1
+                }
+              }
+            },
+            "ext": "v0"
+          },
+          2000000
+        ]
+      ],
+      [
+        {
+          "contract_data": {
+            "contract": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2KM",
+            "key": {
+              "vec": [
+                {
+                  "symbol": "ProfileIndex"
+                },
+                {
+                  "vec": [
+                    {
+                      "symbol": "Issuer"
+                    }
+                  ]
+                },
+                {
+                  "u32": 0
+                }
+              ]
+            },
+            "durability": "persistent"
+          }
+        },
+        [
+          {
+            "last_modified_ledger_seq": 0,
+            "data": {
+              "contract_data": {
+                "ext": "v0",
+                "contract": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2KM",
+                "key": {
+                  "vec": [
+                    {
+                      "symbol": "ProfileIndex"
+                    },
+                    {
+                      "vec": [
+                        {
+                          "symbol": "Issuer"
+                        }
+                      ]
+                    },
+                    {
+                      "u32": 0
+                    }
+                  ]
+                },
+                "durability": "persistent",
+                "val": {
+                  "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHK3M"
                 }
               }
             },
@@ -407,26 +519,26 @@
                   "map": [
                     {
                       "key": {
-                        "string": "Valg"
+                        "string": "key_1"
                       },
                       "val": {
-                        "string": "qV_Q"
+                        "string": "value_1"
                       }
                     },
                     {
                       "key": {
-                        "string": "e_NAX3v0tU"
+                        "string": "key_2"
                       },
                       "val": {
-                        "string": "vF8aPaU_2aNjr8M4Xh__"
+                        "string": "value_2"
                       }
                     },
                     {
                       "key": {
-                        "string": "u8I_"
+                        "string": "y__v5TH6x3"
                       },
                       "val": {
-                        "string": "Qjh8Q_s42C"
+                        "string": "da"
                       }
                     }
                   ]
@@ -533,26 +645,26 @@
                     "map": [
                       {
                         "key": {
-                          "string": "Valg"
+                          "string": "key_1"
                         },
                         "val": {
-                          "string": "qV_Q"
+                          "string": "value_1"
                         }
                       },
                       {
                         "key": {
-                          "string": "e_NAX3v0tU"
+                          "string": "key_2"
                         },
                         "val": {
-                          "string": "vF8aPaU_2aNjr8M4Xh__"
+                          "string": "value_2"
                         }
                       },
                       {
                         "key": {
-                          "string": "u8I_"
+                          "string": "y__v5TH6x3"
                         },
                         "val": {
-                          "string": "Qjh8Q_s42C"
+                          "string": "da"
                         }
                       }
                     ]

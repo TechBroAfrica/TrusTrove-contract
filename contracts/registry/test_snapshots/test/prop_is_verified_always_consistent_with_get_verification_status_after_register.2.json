@@ -36,7 +36,16 @@
                   "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHK3M"
                 },
                 {
-                  "map": []
+                  "map": [
+                    {
+                      "key": {
+                        "string": "_I_q5_ky0"
+                      },
+                      "val": {
+                        "string": "N2_15vTZOJR8l36V__r8"
+                      }
+                    }
+                  ]
                 }
               ]
             }
@@ -100,7 +109,16 @@
                         "symbol": "metadata"
                       },
                       "val": {
-                        "map": []
+                        "map": [
+                          {
+                            "key": {
+                              "string": "_I_q5_ky0"
+                            },
+                            "val": {
+                              "string": "N2_15vTZOJR8l36V__r8"
+                            }
+                          }
+                        ]
                       }
                     },
                     {
@@ -120,6 +138,118 @@
                       }
                     }
                   ]
+                }
+              }
+            },
+            "ext": "v0"
+          },
+          2000000
+        ]
+      ],
+      [
+        {
+          "contract_data": {
+            "contract": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2KM",
+            "key": {
+              "vec": [
+                {
+                  "symbol": "ProfileCount"
+                },
+                {
+                  "vec": [
+                    {
+                      "symbol": "Buyer"
+                    }
+                  ]
+                }
+              ]
+            },
+            "durability": "persistent"
+          }
+        },
+        [
+          {
+            "last_modified_ledger_seq": 0,
+            "data": {
+              "contract_data": {
+                "ext": "v0",
+                "contract": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2KM",
+                "key": {
+                  "vec": [
+                    {
+                      "symbol": "ProfileCount"
+                    },
+                    {
+                      "vec": [
+                        {
+                          "symbol": "Buyer"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "durability": "persistent",
+                "val": {
+                  "u32": 1
+                }
+              }
+            },
+            "ext": "v0"
+          },
+          2000000
+        ]
+      ],
+      [
+        {
+          "contract_data": {
+            "contract": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2KM",
+            "key": {
+              "vec": [
+                {
+                  "symbol": "ProfileIndex"
+                },
+                {
+                  "vec": [
+                    {
+                      "symbol": "Buyer"
+                    }
+                  ]
+                },
+                {
+                  "u32": 0
+                }
+              ]
+            },
+            "durability": "persistent"
+          }
+        },
+        [
+          {
+            "last_modified_ledger_seq": 0,
+            "data": {
+              "contract_data": {
+                "ext": "v0",
+                "contract": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2KM",
+                "key": {
+                  "vec": [
+                    {
+                      "symbol": "ProfileIndex"
+                    },
+                    {
+                      "vec": [
+                        {
+                          "symbol": "Buyer"
+                        }
+                      ]
+                    },
+                    {
+                      "u32": 0
+                    }
+                  ]
+                },
+                "durability": "persistent",
+                "val": {
+                  "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHK3M"
                 }
               }
             },
@@ -355,7 +485,16 @@
                   "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHK3M"
                 },
                 {
-                  "map": []
+                  "map": [
+                    {
+                      "key": {
+                        "string": "_I_q5_ky0"
+                      },
+                      "val": {
+                        "string": "N2_15vTZOJR8l36V__r8"
+                      }
+                    }
+                  ]
                 }
               ]
             }

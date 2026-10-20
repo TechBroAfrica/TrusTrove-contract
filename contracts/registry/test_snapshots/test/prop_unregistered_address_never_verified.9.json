@@ -1,6 +1,6 @@
 {
   "generators": {
-    "address": 8,
+    "address": 5,
     "nonce": 0
   },
   "auth": [
@@ -39,10 +39,34 @@
                   "map": [
                     {
                       "key": {
-                        "string": "xXeM_LZD6o"
+                        "string": "_"
                       },
                       "val": {
-                        "string": "vE_d_3_6yHRpz5X4tX9"
+                        "string": "y8hE7SjVtkPc_mu_J"
+                      }
+                    },
+                    {
+                      "key": {
+                        "string": "g_2"
+                      },
+                      "val": {
+                        "string": "nE_kEpG7WeW2_hx"
+                      }
+                    },
+                    {
+                      "key": {
+                        "string": "i_P1_"
+                      },
+                      "val": {
+                        "string": "T__wqW"
+                      }
+                    },
+                    {
+                      "key": {
+                        "string": "vRl"
+                      },
+                      "val": {
+                        "string": "jm"
                       }
                     }
                   ]
@@ -61,7 +85,7 @@
           "function": {
             "contract_fn": {
               "contract_address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2KM",
-              "function_name": "register_buyer",
+              "function_name": "register_issuer",
               "args": [
                 {
                   "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAITA4"
@@ -70,18 +94,26 @@
                   "map": [
                     {
                       "key": {
-                        "string": "Y4"
+                        "string": "H_Zol22"
                       },
                       "val": {
-                        "string": "bUq35FChWE_wJ0rLA8_Q"
+                        "string": "_J6kXnC5_hc5V6B40le"
                       }
                     },
                     {
                       "key": {
-                        "string": "Zzjm_9"
+                        "string": "LMg1"
                       },
                       "val": {
-                        "string": "kM"
+                        "string": "lTZSOpEC961X0C"
+                      }
+                    },
+                    {
+                      "key": {
+                        "string": "R_SxKGDEhd"
+                      },
+                      "val": {
+                        "string": "5XP"
                       }
                     },
                     {
@@ -89,156 +121,15 @@
                         "string": "_"
                       },
                       "val": {
-                        "string": "_5Zuy9xGFaGsVEpIwUG"
+                        "string": "__5N0u_uEEvuS22SO0g"
                       }
                     },
                     {
                       "key": {
-                        "string": "dtABm_7"
+                        "string": "jWNi3sH1_"
                       },
                       "val": {
-                        "string": "5VdcqfJz2895"
-                      }
-                    },
-                    {
-                      "key": {
-                        "string": "edSc_ey5"
-                      },
-                      "val": {
-                        "string": "8_g9_i1XJ_ph"
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          },
-          "sub_invocations": []
-        }
-      ]
-    ],
-    [
-      [
-        "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAK3IM",
-        {
-          "function": {
-            "contract_fn": {
-              "contract_address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2KM",
-              "function_name": "register_issuer",
-              "args": [
-                {
-                  "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAK3IM"
-                },
-                {
-                  "map": [
-                    {
-                      "key": {
-                        "string": "BR6ZE"
-                      },
-                      "val": {
-                        "string": "uVH3FaRuZUH_73"
-                      }
-                    },
-                    {
-                      "key": {
-                        "string": "mmd3HlU"
-                      },
-                      "val": {
-                        "string": "e_v"
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          },
-          "sub_invocations": []
-        }
-      ]
-    ],
-    [
-      [
-        "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMDR4",
-        {
-          "function": {
-            "contract_fn": {
-              "contract_address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2KM",
-              "function_name": "register_buyer",
-              "args": [
-                {
-                  "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMDR4"
-                },
-                {
-                  "map": [
-                    {
-                      "key": {
-                        "string": "A7"
-                      },
-                      "val": {
-                        "string": "3oI"
-                      }
-                    },
-                    {
-                      "key": {
-                        "string": "KN16_iDIgl"
-                      },
-                      "val": {
-                        "string": "QzQ_LJ5_8"
-                      }
-                    },
-                    {
-                      "key": {
-                        "string": "ZOpV_euvn_"
-                      },
-                      "val": {
-                        "string": "_g__G42bP_C8m__sTR7w"
-                      }
-                    },
-                    {
-                      "key": {
-                        "string": "vav8Q43Ac"
-                      },
-                      "val": {
-                        "string": "a_B"
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          },
-          "sub_invocations": []
-        }
-      ]
-    ],
-    [
-      [
-        "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOLZM",
-        {
-          "function": {
-            "contract_fn": {
-              "contract_address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2KM",
-              "function_name": "register_issuer",
-              "args": [
-                {
-                  "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOLZM"
-                },
-                {
-                  "map": [
-                    {
-                      "key": {
-                        "string": "A73M0C"
-                      },
-                      "val": {
-                        "string": "zS"
-                      }
-                    },
-                    {
-                      "key": {
-                        "string": "gI7"
-                      },
-                      "val": {
-                        "string": "__8k__T0COTIsFCQDQ"
+                        "string": "9FN0O"
                       }
                     }
                   ]
@@ -308,10 +199,34 @@
                         "map": [
                           {
                             "key": {
-                              "string": "xXeM_LZD6o"
+                              "string": "_"
                             },
                             "val": {
-                              "string": "vE_d_3_6yHRpz5X4tX9"
+                              "string": "y8hE7SjVtkPc_mu_J"
+                            }
+                          },
+                          {
+                            "key": {
+                              "string": "g_2"
+                            },
+                            "val": {
+                              "string": "nE_kEpG7WeW2_hx"
+                            }
+                          },
+                          {
+                            "key": {
+                              "string": "i_P1_"
+                            },
+                            "val": {
+                              "string": "T__wqW"
+                            }
+                          },
+                          {
+                            "key": {
+                              "string": "vRl"
+                            },
+                            "val": {
+                              "string": "jm"
                             }
                           }
                         ]
@@ -387,18 +302,26 @@
                         "map": [
                           {
                             "key": {
-                              "string": "Y4"
+                              "string": "H_Zol22"
                             },
                             "val": {
-                              "string": "bUq35FChWE_wJ0rLA8_Q"
+                              "string": "_J6kXnC5_hc5V6B40le"
                             }
                           },
                           {
                             "key": {
-                              "string": "Zzjm_9"
+                              "string": "LMg1"
                             },
                             "val": {
-                              "string": "kM"
+                              "string": "lTZSOpEC961X0C"
+                            }
+                          },
+                          {
+                            "key": {
+                              "string": "R_SxKGDEhd"
+                            },
+                            "val": {
+                              "string": "5XP"
                             }
                           },
                           {
@@ -406,110 +329,15 @@
                               "string": "_"
                             },
                             "val": {
-                              "string": "_5Zuy9xGFaGsVEpIwUG"
+                              "string": "__5N0u_uEEvuS22SO0g"
                             }
                           },
                           {
                             "key": {
-                              "string": "dtABm_7"
+                              "string": "jWNi3sH1_"
                             },
                             "val": {
-                              "string": "5VdcqfJz2895"
-                            }
-                          },
-                          {
-                            "key": {
-                              "string": "edSc_ey5"
-                            },
-                            "val": {
-                              "string": "8_g9_i1XJ_ph"
-                            }
-                          }
-                        ]
-                      }
-                    },
-                    {
-                      "key": {
-                        "symbol": "packed_flags"
-                      },
-                      "val": {
-                        "u32": 1
-                      }
-                    },
-                    {
-                      "key": {
-                        "symbol": "registered_at"
-                      },
-                      "val": {
-                        "u64": 0
-                      }
-                    }
-                  ]
-                }
-              }
-            },
-            "ext": "v0"
-          },
-          2000000
-        ]
-      ],
-      [
-        {
-          "contract_data": {
-            "contract": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2KM",
-            "key": {
-              "vec": [
-                {
-                  "symbol": "Profile"
-                },
-                {
-                  "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAK3IM"
-                }
-              ]
-            },
-            "durability": "persistent"
-          }
-        },
-        [
-          {
-            "last_modified_ledger_seq": 0,
-            "data": {
-              "contract_data": {
-                "ext": "v0",
-                "contract": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2KM",
-                "key": {
-                  "vec": [
-                    {
-                      "symbol": "Profile"
-                    },
-                    {
-                      "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAK3IM"
-                    }
-                  ]
-                },
-                "durability": "persistent",
-                "val": {
-                  "map": [
-                    {
-                      "key": {
-                        "symbol": "metadata"
-                      },
-                      "val": {
-                        "map": [
-                          {
-                            "key": {
-                              "string": "BR6ZE"
-                            },
-                            "val": {
-                              "string": "uVH3FaRuZUH_73"
-                            }
-                          },
-                          {
-                            "key": {
-                              "string": "mmd3HlU"
-                            },
-                            "val": {
-                              "string": "e_v"
+                              "string": "9FN0O"
                             }
                           }
                         ]
@@ -547,10 +375,14 @@
             "key": {
               "vec": [
                 {
-                  "symbol": "Profile"
+                  "symbol": "ProfileCount"
                 },
                 {
-                  "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMDR4"
+                  "vec": [
+                    {
+                      "symbol": "Buyer"
+                    }
+                  ]
                 }
               ]
             },
@@ -567,74 +399,20 @@
                 "key": {
                   "vec": [
                     {
-                      "symbol": "Profile"
+                      "symbol": "ProfileCount"
                     },
                     {
-                      "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMDR4"
+                      "vec": [
+                        {
+                          "symbol": "Buyer"
+                        }
+                      ]
                     }
                   ]
                 },
                 "durability": "persistent",
                 "val": {
-                  "map": [
-                    {
-                      "key": {
-                        "symbol": "metadata"
-                      },
-                      "val": {
-                        "map": [
-                          {
-                            "key": {
-                              "string": "A7"
-                            },
-                            "val": {
-                              "string": "3oI"
-                            }
-                          },
-                          {
-                            "key": {
-                              "string": "KN16_iDIgl"
-                            },
-                            "val": {
-                              "string": "QzQ_LJ5_8"
-                            }
-                          },
-                          {
-                            "key": {
-                              "string": "ZOpV_euvn_"
-                            },
-                            "val": {
-                              "string": "_g__G42bP_C8m__sTR7w"
-                            }
-                          },
-                          {
-                            "key": {
-                              "string": "vav8Q43Ac"
-                            },
-                            "val": {
-                              "string": "a_B"
-                            }
-                          }
-                        ]
-                      }
-                    },
-                    {
-                      "key": {
-                        "symbol": "packed_flags"
-                      },
-                      "val": {
-                        "u32": 1
-                      }
-                    },
-                    {
-                      "key": {
-                        "symbol": "registered_at"
-                      },
-                      "val": {
-                        "u64": 0
-                      }
-                    }
-                  ]
+                  "u32": 1
                 }
               }
             },
@@ -650,10 +428,14 @@
             "key": {
               "vec": [
                 {
-                  "symbol": "Profile"
+                  "symbol": "ProfileCount"
                 },
                 {
-                  "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOLZM"
+                  "vec": [
+                    {
+                      "symbol": "Issuer"
+                    }
+                  ]
                 }
               ]
             },
@@ -670,58 +452,138 @@
                 "key": {
                   "vec": [
                     {
-                      "symbol": "Profile"
+                      "symbol": "ProfileCount"
                     },
                     {
-                      "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOLZM"
+                      "vec": [
+                        {
+                          "symbol": "Issuer"
+                        }
+                      ]
                     }
                   ]
                 },
                 "durability": "persistent",
                 "val": {
-                  "map": [
+                  "u32": 1
+                }
+              }
+            },
+            "ext": "v0"
+          },
+          2000000
+        ]
+      ],
+      [
+        {
+          "contract_data": {
+            "contract": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2KM",
+            "key": {
+              "vec": [
+                {
+                  "symbol": "ProfileIndex"
+                },
+                {
+                  "vec": [
                     {
-                      "key": {
-                        "symbol": "metadata"
-                      },
-                      "val": {
-                        "map": [
-                          {
-                            "key": {
-                              "string": "A73M0C"
-                            },
-                            "val": {
-                              "string": "zS"
-                            }
-                          },
-                          {
-                            "key": {
-                              "string": "gI7"
-                            },
-                            "val": {
-                              "string": "__8k__T0COTIsFCQDQ"
-                            }
-                          }
-                        ]
-                      }
-                    },
-                    {
-                      "key": {
-                        "symbol": "packed_flags"
-                      },
-                      "val": {
-                        "u32": 0
-                      }
-                    },
-                    {
-                      "key": {
-                        "symbol": "registered_at"
-                      },
-                      "val": {
-                        "u64": 0
-                      }
+                      "symbol": "Buyer"
                     }
                   ]
+                },
+                {
+                  "u32": 0
+                }
+              ]
+            },
+            "durability": "persistent"
+          }
+        },
+        [
+          {
+            "last_modified_ledger_seq": 0,
+            "data": {
+              "contract_data": {
+                "ext": "v0",
+                "contract": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2KM",
+                "key": {
+                  "vec": [
+                    {
+                      "symbol": "ProfileIndex"
+                    },
+                    {
+                      "vec": [
+                        {
+                          "symbol": "Buyer"
+                        }
+                      ]
+                    },
+                    {
+                      "u32": 0
+                    }
+                  ]
+                },
+                "durability": "persistent",
+                "val": {
+                  "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHK3M"
+                }
+              }
+            },
+            "ext": "v0"
+          },
+          2000000
+        ]
+      ],
+      [
+        {
+          "contract_data": {
+            "contract": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2KM",
+            "key": {
+              "vec": [
+                {
+                  "symbol": "ProfileIndex"
+                },
+                {
+                  "vec": [
+                    {
+                      "symbol": "Issuer"
+                    }
+                  ]
+                },
+                {
+                  "u32": 0
+                }
+              ]
+            },
+            "durability": "persistent"
+          }
+        },
+        [
+          {
+            "last_modified_ledger_seq": 0,
+            "data": {
+              "contract_data": {
+                "ext": "v0",
+                "contract": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2KM",
+                "key": {
+                  "vec": [
+                    {
+                      "symbol": "ProfileIndex"
+                    },
+                    {
+                      "vec": [
+                        {
+                          "symbol": "Issuer"
+                        }
+                      ]
+                    },
+                    {
+                      "u32": 0
+                    }
+                  ]
+                },
+                "durability": "persistent",
+                "val": {
+                  "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAITA4"
                 }
               }
             },
@@ -876,105 +738,6 @@
       ],
       [
         {
-          "contract_data": {
-            "contract": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAK3IM",
-            "key": {
-              "ledger_key_nonce": {
-                "nonce": 4837995959683129791
-              }
-            },
-            "durability": "temporary"
-          }
-        },
-        [
-          {
-            "last_modified_ledger_seq": 0,
-            "data": {
-              "contract_data": {
-                "ext": "v0",
-                "contract": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAK3IM",
-                "key": {
-                  "ledger_key_nonce": {
-                    "nonce": 4837995959683129791
-                  }
-                },
-                "durability": "temporary",
-                "val": "void"
-              }
-            },
-            "ext": "v0"
-          },
-          6311999
-        ]
-      ],
-      [
-        {
-          "contract_data": {
-            "contract": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMDR4",
-            "key": {
-              "ledger_key_nonce": {
-                "nonce": 2032731177588607455
-              }
-            },
-            "durability": "temporary"
-          }
-        },
-        [
-          {
-            "last_modified_ledger_seq": 0,
-            "data": {
-              "contract_data": {
-                "ext": "v0",
-                "contract": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMDR4",
-                "key": {
-                  "ledger_key_nonce": {
-                    "nonce": 2032731177588607455
-                  }
-                },
-                "durability": "temporary",
-                "val": "void"
-              }
-            },
-            "ext": "v0"
-          },
-          6311999
-        ]
-      ],
-      [
-        {
-          "contract_data": {
-            "contract": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOLZM",
-            "key": {
-              "ledger_key_nonce": {
-                "nonce": 4270020994084947596
-              }
-            },
-            "durability": "temporary"
-          }
-        },
-        [
-          {
-            "last_modified_ledger_seq": 0,
-            "data": {
-              "contract_data": {
-                "ext": "v0",
-                "contract": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOLZM",
-                "key": {
-                  "ledger_key_nonce": {
-                    "nonce": 4270020994084947596
-                  }
-                },
-                "durability": "temporary",
-                "val": "void"
-              }
-            },
-            "ext": "v0"
-          },
-          6311999
-        ]
-      ],
-      [
-        {
           "contract_code": {
             "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
           }
@@ -1092,10 +855,34 @@
                   "map": [
                     {
                       "key": {
-                        "string": "xXeM_LZD6o"
+                        "string": "_"
                       },
                       "val": {
-                        "string": "vE_d_3_6yHRpz5X4tX9"
+                        "string": "y8hE7SjVtkPc_mu_J"
+                      }
+                    },
+                    {
+                      "key": {
+                        "string": "g_2"
+                      },
+                      "val": {
+                        "string": "nE_kEpG7WeW2_hx"
+                      }
+                    },
+                    {
+                      "key": {
+                        "string": "i_P1_"
+                      },
+                      "val": {
+                        "string": "T__wqW"
+                      }
+                    },
+                    {
+                      "key": {
+                        "string": "vRl"
+                      },
+                      "val": {
+                        "string": "jm"
                       }
                     }
                   ]
@@ -1166,7 +953,7 @@
                 "bytes": "0000000000000000000000000000000000000000000000000000000000000001"
               },
               {
-                "symbol": "register_buyer"
+                "symbol": "register_issuer"
               }
             ],
             "data": {
@@ -1178,18 +965,26 @@
                   "map": [
                     {
                       "key": {
-                        "string": "Y4"
+                        "string": "H_Zol22"
                       },
                       "val": {
-                        "string": "bUq35FChWE_wJ0rLA8_Q"
+                        "string": "_J6kXnC5_hc5V6B40le"
                       }
                     },
                     {
                       "key": {
-                        "string": "Zzjm_9"
+                        "string": "LMg1"
                       },
                       "val": {
-                        "string": "kM"
+                        "string": "lTZSOpEC961X0C"
+                      }
+                    },
+                    {
+                      "key": {
+                        "string": "R_SxKGDEhd"
+                      },
+                      "val": {
+                        "string": "5XP"
                       }
                     },
                     {
@@ -1197,23 +992,15 @@
                         "string": "_"
                       },
                       "val": {
-                        "string": "_5Zuy9xGFaGsVEpIwUG"
+                        "string": "__5N0u_uEEvuS22SO0g"
                       }
                     },
                     {
                       "key": {
-                        "string": "dtABm_7"
+                        "string": "jWNi3sH1_"
                       },
                       "val": {
-                        "string": "5VdcqfJz2895"
-                      }
-                    },
-                    {
-                      "key": {
-                        "string": "edSc_ey5"
-                      },
-                      "val": {
-                        "string": "8_g9_i1XJ_ph"
+                        "string": "9FN0O"
                       }
                     }
                   ]
@@ -1234,308 +1021,10 @@
           "v0": {
             "topics": [
               {
-                "symbol": "buyer_registered"
+                "symbol": "issuer_registered"
               },
               {
                 "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAITA4"
-              }
-            ],
-            "data": "void"
-          }
-        }
-      },
-      "failed_call": false
-    },
-    {
-      "event": {
-        "ext": "v0",
-        "contract_id": "0000000000000000000000000000000000000000000000000000000000000001",
-        "type_": "diagnostic",
-        "body": {
-          "v0": {
-            "topics": [
-              {
-                "symbol": "fn_return"
-              },
-              {
-                "symbol": "register_buyer"
-              }
-            ],
-            "data": {
-              "bool": true
-            }
-          }
-        }
-      },
-      "failed_call": false
-    },
-    {
-      "event": {
-        "ext": "v0",
-        "contract_id": null,
-        "type_": "diagnostic",
-        "body": {
-          "v0": {
-            "topics": [
-              {
-                "symbol": "fn_call"
-              },
-              {
-                "bytes": "0000000000000000000000000000000000000000000000000000000000000001"
-              },
-              {
-                "symbol": "register_issuer"
-              }
-            ],
-            "data": {
-              "vec": [
-                {
-                  "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAK3IM"
-                },
-                {
-                  "map": [
-                    {
-                      "key": {
-                        "string": "BR6ZE"
-                      },
-                      "val": {
-                        "string": "uVH3FaRuZUH_73"
-                      }
-                    },
-                    {
-                      "key": {
-                        "string": "mmd3HlU"
-                      },
-                      "val": {
-                        "string": "e_v"
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        }
-      },
-      "failed_call": false
-    },
-    {
-      "event": {
-        "ext": "v0",
-        "contract_id": "0000000000000000000000000000000000000000000000000000000000000001",
-        "type_": "contract",
-        "body": {
-          "v0": {
-            "topics": [
-              {
-                "symbol": "issuer_registered"
-              },
-              {
-                "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAK3IM"
-              }
-            ],
-            "data": "void"
-          }
-        }
-      },
-      "failed_call": false
-    },
-    {
-      "event": {
-        "ext": "v0",
-        "contract_id": "0000000000000000000000000000000000000000000000000000000000000001",
-        "type_": "diagnostic",
-        "body": {
-          "v0": {
-            "topics": [
-              {
-                "symbol": "fn_return"
-              },
-              {
-                "symbol": "register_issuer"
-              }
-            ],
-            "data": {
-              "bool": true
-            }
-          }
-        }
-      },
-      "failed_call": false
-    },
-    {
-      "event": {
-        "ext": "v0",
-        "contract_id": null,
-        "type_": "diagnostic",
-        "body": {
-          "v0": {
-            "topics": [
-              {
-                "symbol": "fn_call"
-              },
-              {
-                "bytes": "0000000000000000000000000000000000000000000000000000000000000001"
-              },
-              {
-                "symbol": "register_buyer"
-              }
-            ],
-            "data": {
-              "vec": [
-                {
-                  "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMDR4"
-                },
-                {
-                  "map": [
-                    {
-                      "key": {
-                        "string": "A7"
-                      },
-                      "val": {
-                        "string": "3oI"
-                      }
-                    },
-                    {
-                      "key": {
-                        "string": "KN16_iDIgl"
-                      },
-                      "val": {
-                        "string": "QzQ_LJ5_8"
-                      }
-                    },
-                    {
-                      "key": {
-                        "string": "ZOpV_euvn_"
-                      },
-                      "val": {
-                        "string": "_g__G42bP_C8m__sTR7w"
-                      }
-                    },
-                    {
-                      "key": {
-                        "string": "vav8Q43Ac"
-                      },
-                      "val": {
-                        "string": "a_B"
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        }
-      },
-      "failed_call": false
-    },
-    {
-      "event": {
-        "ext": "v0",
-        "contract_id": "0000000000000000000000000000000000000000000000000000000000000001",
-        "type_": "contract",
-        "body": {
-          "v0": {
-            "topics": [
-              {
-                "symbol": "buyer_registered"
-              },
-              {
-                "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMDR4"
-              }
-            ],
-            "data": "void"
-          }
-        }
-      },
-      "failed_call": false
-    },
-    {
-      "event": {
-        "ext": "v0",
-        "contract_id": "0000000000000000000000000000000000000000000000000000000000000001",
-        "type_": "diagnostic",
-        "body": {
-          "v0": {
-            "topics": [
-              {
-                "symbol": "fn_return"
-              },
-              {
-                "symbol": "register_buyer"
-              }
-            ],
-            "data": {
-              "bool": true
-            }
-          }
-        }
-      },
-      "failed_call": false
-    },
-    {
-      "event": {
-        "ext": "v0",
-        "contract_id": null,
-        "type_": "diagnostic",
-        "body": {
-          "v0": {
-            "topics": [
-              {
-                "symbol": "fn_call"
-              },
-              {
-                "bytes": "0000000000000000000000000000000000000000000000000000000000000001"
-              },
-              {
-                "symbol": "register_issuer"
-              }
-            ],
-            "data": {
-              "vec": [
-                {
-                  "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOLZM"
-                },
-                {
-                  "map": [
-                    {
-                      "key": {
-                        "string": "A73M0C"
-                      },
-                      "val": {
-                        "string": "zS"
-                      }
-                    },
-                    {
-                      "key": {
-                        "string": "gI7"
-                      },
-                      "val": {
-                        "string": "__8k__T0COTIsFCQDQ"
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        }
-      },
-      "failed_call": false
-    },
-    {
-      "event": {
-        "ext": "v0",
-        "contract_id": "0000000000000000000000000000000000000000000000000000000000000001",
-        "type_": "contract",
-        "body": {
-          "v0": {
-            "topics": [
-              {
-                "symbol": "issuer_registered"
-              },
-              {
-                "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOLZM"
               }
             ],
             "data": "void"
@@ -1586,7 +1075,7 @@
               }
             ],
             "data": {
-              "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARQG5"
+              "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAK3IM"
             }
           }
         }
@@ -1635,7 +1124,7 @@
               }
             ],
             "data": {
-              "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARQG5"
+              "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAK3IM"
             }
           }
         }

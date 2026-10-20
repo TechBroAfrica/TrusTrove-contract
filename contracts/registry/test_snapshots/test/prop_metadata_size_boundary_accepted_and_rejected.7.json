@@ -39,26 +39,10 @@
                   "map": [
                     {
                       "key": {
-                        "string": "OTz____qmu"
+                        "string": "key_0"
                       },
                       "val": {
-                        "string": "48UZO01Qz3s"
-                      }
-                    },
-                    {
-                      "key": {
-                        "string": "___nzl_3"
-                      },
-                      "val": {
-                        "string": "4oDGm4Fc3A"
-                      }
-                    },
-                    {
-                      "key": {
-                        "string": "uCIGX_l"
-                      },
-                      "val": {
-                        "string": "zE_J4A___8__6Yga_h"
+                        "string": "value_0"
                       }
                     }
                   ]
@@ -127,26 +111,10 @@
                         "map": [
                           {
                             "key": {
-                              "string": "OTz____qmu"
+                              "string": "key_0"
                             },
                             "val": {
-                              "string": "48UZO01Qz3s"
-                            }
-                          },
-                          {
-                            "key": {
-                              "string": "___nzl_3"
-                            },
-                            "val": {
-                              "string": "4oDGm4Fc3A"
-                            }
-                          },
-                          {
-                            "key": {
-                              "string": "uCIGX_l"
-                            },
-                            "val": {
-                              "string": "zE_J4A___8__6Yga_h"
+                              "string": "value_0"
                             }
                           }
                         ]
@@ -169,6 +137,118 @@
                       }
                     }
                   ]
+                }
+              }
+            },
+            "ext": "v0"
+          },
+          2000000
+        ]
+      ],
+      [
+        {
+          "contract_data": {
+            "contract": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2KM",
+            "key": {
+              "vec": [
+                {
+                  "symbol": "ProfileCount"
+                },
+                {
+                  "vec": [
+                    {
+                      "symbol": "Issuer"
+                    }
+                  ]
+                }
+              ]
+            },
+            "durability": "persistent"
+          }
+        },
+        [
+          {
+            "last_modified_ledger_seq": 0,
+            "data": {
+              "contract_data": {
+                "ext": "v0",
+                "contract": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2KM",
+                "key": {
+                  "vec": [
+                    {
+                      "symbol": "ProfileCount"
+                    },
+                    {
+                      "vec": [
+                        {
+                          "symbol": "Issuer"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "durability": "persistent",
+                "val": {
+                  "u32": 1
+                }
+              }
+            },
+            "ext": "v0"
+          },
+          2000000
+        ]
+      ],
+      [
+        {
+          "contract_data": {
+            "contract": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2KM",
+            "key": {
+              "vec": [
+                {
+                  "symbol": "ProfileIndex"
+                },
+                {
+                  "vec": [
+                    {
+                      "symbol": "Issuer"
+                    }
+                  ]
+                },
+                {
+                  "u32": 0
+                }
+              ]
+            },
+            "durability": "persistent"
+          }
+        },
+        [
+          {
+            "last_modified_ledger_seq": 0,
+            "data": {
+              "contract_data": {
+                "ext": "v0",
+                "contract": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2KM",
+                "key": {
+                  "vec": [
+                    {
+                      "symbol": "ProfileIndex"
+                    },
+                    {
+                      "vec": [
+                        {
+                          "symbol": "Issuer"
+                        }
+                      ]
+                    },
+                    {
+                      "u32": 0
+                    }
+                  ]
+                },
+                "durability": "persistent",
+                "val": {
+                  "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHK3M"
                 }
               }
             },
@@ -407,26 +487,10 @@
                   "map": [
                     {
                       "key": {
-                        "string": "OTz____qmu"
+                        "string": "key_0"
                       },
                       "val": {
-                        "string": "48UZO01Qz3s"
-                      }
-                    },
-                    {
-                      "key": {
-                        "string": "___nzl_3"
-                      },
-                      "val": {
-                        "string": "4oDGm4Fc3A"
-                      }
-                    },
-                    {
-                      "key": {
-                        "string": "uCIGX_l"
-                      },
-                      "val": {
-                        "string": "zE_J4A___8__6Yga_h"
+                        "string": "value_0"
                       }
                     }
                   ]
@@ -533,26 +597,10 @@
                     "map": [
                       {
                         "key": {
-                          "string": "OTz____qmu"
+                          "string": "key_0"
                         },
                         "val": {
-                          "string": "48UZO01Qz3s"
-                        }
-                      },
-                      {
-                        "key": {
-                          "string": "___nzl_3"
-                        },
-                        "val": {
-                          "string": "4oDGm4Fc3A"
-                        }
-                      },
-                      {
-                        "key": {
-                          "string": "uCIGX_l"
-                        },
-                        "val": {
-                          "string": "zE_J4A___8__6Yga_h"
+                          "string": "value_0"
                         }
                       }
                     ]
