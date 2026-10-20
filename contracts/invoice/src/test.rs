@@ -1873,6 +1873,90 @@ fn test_status_membership_marker_written_on_create_and_rolled_on_transitions() {
 }
 
 #[test]
+fn test_mark_defaulted_is_idempotent_without_duplicate_status_index_or_events() {
+    let (env, client, issuer, buyer, _, usdc) = setup();
+    let due_date = env.ledger().timestamp() + DEFAULT_DUE_OFFSET;
+    let invoice_id = client.create(&issuer, &buyer, &DEFAULT_FACE_VALUE, &due_date, &usdc);
+    attest(&env, &client, &invoice_id);
+    client.list_for_financing(&invoice_id, &DEFAULT_DISCOUNT_BPS);
+
+    let pool = mock_pool_with_asset(&env, &usdc);
+    client.set_pool_contract(&pool);
+    client.mark_funded(&invoice_id, &pool, &usdc, &DEFAULT_FUNDED_AMOUNT);
+    assert_eq!(client.get(&invoice_id).status, InvoiceStatus::Funded);
+
+    let count_before = client.get_counts();
+    assert_eq!(count_before.get(String::from_str(&env, "Defaulted")), Some(0));
+    assert_eq!(count_before.get(String::from_str(&env, "Funded")), Some(1));
+    let default_events_before = env
+        .events()
+        .all()
+        .iter()
+        .filter(|(contract, topics, _)| {
+            *contract == client.address && {
+                let topic0: Symbol = Symbol::try_from_val(&env, &topics.get(0).unwrap()).unwrap();
+                topic0 == Symbol::new(&env, "invoice_defaulted")
+            }
+        })
+        .count();
+
+    assert!(client.mark_defaulted(&invoice_id));
+    assert_eq!(client.get(&invoice_id).status, InvoiceStatus::Defaulted);
+    assert!(client.has_status_membership(&InvoiceStatus::Defaulted, &invoice_id));
+    assert!(!client.has_status_membership(&InvoiceStatus::Funded, &invoice_id));
+
+    let count_after_first_default = client.get_counts();
+    assert_eq!(
+        count_after_first_default.get(String::from_str(&env, "Defaulted")),
+        Some(1)
+    );
+    assert_eq!(
+        count_after_first_default.get(String::from_str(&env, "Funded")),
+        Some(0)
+    );
+
+    let default_events_after_first_default = env
+        .events()
+        .all()
+        .iter()
+        .filter(|(contract, topics, _)| {
+            *contract == client.address && {
+                let topic0: Symbol = Symbol::try_from_val(&env, &topics.get(0).unwrap()).unwrap();
+                topic0 == Symbol::new(&env, "invoice_defaulted")
+            }
+        })
+        .count();
+    assert_eq!(default_events_after_first_default, default_events_before + 1);
+
+    assert!(client.mark_defaulted(&invoice_id));
+    assert_eq!(client.get(&invoice_id).status, InvoiceStatus::Defaulted);
+    assert_eq!(client.get_counts(), count_after_first_default);
+    assert!(client.has_status_membership(&InvoiceStatus::Defaulted, &invoice_id));
+    assert!(!client.has_status_membership(&InvoiceStatus::Funded, &invoice_id));
+
+    let default_events_after_second_default = env
+        .events()
+        .all()
+        .iter()
+        .filter(|(contract, topics, _)| {
+            *contract == client.address && {
+                let topic0: Symbol = Symbol::try_from_val(&env, &topics.get(0).unwrap()).unwrap();
+                topic0 == Symbol::new(&env, "invoice_defaulted")
+            }
+        })
+        .count();
+    assert_eq!(default_events_after_second_default, default_events_after_first_default);
+    assert_eq!(
+        client.get_counts().get(String::from_str(&env, "Defaulted")),
+        Some(1)
+    );
+    assert_eq!(
+        client.get_counts().get(String::from_str(&env, "Funded")),
+        Some(0)
+    );
+}
+
+#[test]
 fn test_has_status_membership_rejects_prior_unknown_and_never_held() {
     let (env, client, issuer, buyer, _, usdc) = setup();
     let due_date = env.ledger().timestamp() + DEFAULT_DUE_OFFSET;
