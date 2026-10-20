@@ -1886,7 +1886,10 @@ fn test_mark_defaulted_is_idempotent_without_duplicate_status_index_or_events() 
     assert_eq!(client.get(&invoice_id).status, InvoiceStatus::Funded);
 
     let count_before = client.get_counts();
-    assert_eq!(count_before.get(String::from_str(&env, "Defaulted")), Some(0));
+    assert_eq!(
+        count_before.get(String::from_str(&env, "Defaulted")),
+        Some(0)
+    );
     assert_eq!(count_before.get(String::from_str(&env, "Funded")), Some(1));
     let default_events_before = env
         .events()
@@ -1926,7 +1929,10 @@ fn test_mark_defaulted_is_idempotent_without_duplicate_status_index_or_events() 
             }
         })
         .count();
-    assert_eq!(default_events_after_first_default, default_events_before + 1);
+    assert_eq!(
+        default_events_after_first_default,
+        default_events_before + 1
+    );
 
     assert!(client.mark_defaulted(&invoice_id));
     assert_eq!(client.get(&invoice_id).status, InvoiceStatus::Defaulted);
@@ -1945,7 +1951,10 @@ fn test_mark_defaulted_is_idempotent_without_duplicate_status_index_or_events() 
             }
         })
         .count();
-    assert_eq!(default_events_after_second_default, default_events_after_first_default);
+    assert_eq!(
+        default_events_after_second_default,
+        default_events_after_first_default
+    );
     assert_eq!(
         client.get_counts().get(String::from_str(&env, "Defaulted")),
         Some(1)
