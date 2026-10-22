@@ -966,6 +966,128 @@ fn test_release_to_pool_rejects_non_invoice_contract_caller() {
     client.release_to_pool(&invoice_id, &amount);
 }
 
+// ---- Issue #997: pinned invoice contract reference for release_to_pool ----
+
+// The admin pins the expected invoice contract with `set_invoice_contract`;
+// `release_to_pool` validates the pool-resolved address against that pin so
+// a drifted pool configuration cannot silently redirect repayments.
+#[test]
+fn test_set_invoice_contract_emits_event() {
+    let (env, client, admin, _, _, _) = setup();
+    let invoice = client.get_invoice_contract();
+
+    client.set_invoice_contract(&invoice);
+
+    let events = env.events().all();
+    let (contract, topics, data) = events
+        .last()
+        .expect("set_invoice_contract must publish an invoice_contract_set event");
+    assert_eq!(contract, client.address);
+    assert_eq!(topics.len(), 2, "symbol + admin topics");
+    assert_eq!(
+        Symbol::try_from_val(&env, &topics.get(0).unwrap()).unwrap(),
+        Symbol::new(&env, "invoice_contract_set")
+    );
+    assert_eq!(
+        Address::try_from_val(&env, &topics.get(1).unwrap()).unwrap(),
+        admin
+    );
+    assert_eq!(Address::try_from_val(&env, &data).unwrap(), invoice);
+}
+
+#[test]
+#[should_panic(expected = "Error(Auth")]
+fn test_set_invoice_contract_requires_admin_auth() {
+    let (_env, client, _, _, _, _) = setup_without_auths();
+    let invoice = client.get_invoice_contract();
+    client.set_invoice_contract(&invoice);
+}
+
+#[test]
+#[should_panic(expected = "Error(Contract, #8)")]
+fn test_set_invoice_contract_rejects_admin_address() {
+    let (_env, client, admin, _pool, _issuer, _usdc_id) = setup();
+    client.set_invoice_contract(&admin);
+}
+
+#[test]
+#[should_panic(expected = "Error(Contract, #8)")]
+fn test_set_invoice_contract_rejects_pool_address() {
+    let (_env, client, _admin, pool, _issuer, _usdc_id) = setup();
+    client.set_invoice_contract(&pool);
+}
+
+#[test]
+#[should_panic(expected = "Error(Contract, #8)")]
+fn test_set_invoice_contract_rejects_escrow_address() {
+    let (_env, client, _admin, _pool, _issuer, _usdc_id) = setup();
+    let escrow = client.address.clone();
+    client.set_invoice_contract(&escrow);
+}
+
+#[test]
+#[should_panic(expected = "Error(Contract, #8)")]
+fn test_set_invoice_contract_rejects_usdc_address() {
+    let (_env, client, _admin, _pool, _issuer, usdc_id) = setup();
+    client.set_invoice_contract(&usdc_id);
+}
+
+#[test]
+fn test_release_to_pool_succeeds_with_matching_pin() {
+    let (env, client, _admin, pool, issuer, usdc_id) = setup();
+    let invoice_id = generate_invoice_id(&env, 40);
+    let amount: u128 = 1_000_000_000;
+
+    // Pin the exact invoice contract the pool reports — no drift.
+    let invoice = client.get_invoice_contract();
+    client.set_invoice_contract(&invoice);
+
+    client.lock(&invoice_id, &amount, &issuer);
+    let pool_before = get_balance(&env, &usdc_id, &pool);
+    assert!(client.release_to_pool(&invoice_id, &amount));
+    assert_eq!(client.get_locked(&invoice_id), 0);
+    assert_eq!(
+        get_balance(&env, &usdc_id, &pool) - pool_before,
+        amount as i128
+    );
+}
+
+#[test]
+#[should_panic(expected = "Error(Contract, #8)")]
+fn test_release_to_pool_rejects_drifted_pin() {
+    let (env, client, _admin, _pool, issuer, _usdc_id) = setup();
+    let invoice_id = generate_invoice_id(&env, 41);
+    let amount: u128 = 1_000_000_000;
+
+    // The admin pinned a reference that does NOT match the pool's configured
+    // invoice contract: settlement must be rejected with InvalidConfig (#8)
+    // even though the pool-resolved caller authorizes the call.
+    let other_invoice = env.register_contract(None, MockCaller);
+    client.set_invoice_contract(&other_invoice);
+
+    client.lock(&invoice_id, &amount, &issuer);
+    client.release_to_pool(&invoice_id, &amount);
+}
+
+#[test]
+#[should_panic(expected = "Error(Contract, #8)")]
+fn test_release_to_pool_rejects_pool_rotation_after_pin() {
+    let (env, client, _admin, pool, issuer, _usdc_id) = setup();
+    let invoice_id = generate_invoice_id(&env, 42);
+    let amount: u128 = 1_000_000_000;
+
+    // The admin pins the invoice contract, then the pool's configuration
+    // rotates away from it: settlement must fail with InvalidConfig (#8)
+    // until the escrow admin repins the reference.
+    let invoice = client.get_invoice_contract();
+    client.set_invoice_contract(&invoice);
+    let rotated = env.register_contract(None, MockCaller);
+    poolmock::MockPoolClient::new(&env, &pool).set_invoice_contract(&rotated);
+
+    client.lock(&invoice_id, &amount, &issuer);
+    client.release_to_pool(&invoice_id, &amount);
+}
+
 // ============================================================================
 // Handle Default Tests
 // ============================================================================
@@ -993,24 +1115,30 @@ fn test_release_to_pool_fails_amount_exceeds_i128_max() {
     client.release_to_pool(&invoice_id, &repayment_amount);
 }
 
+// #1004: a partial repayment must leave the residual principal locked, keep
+// the original `locked_at`, and record exactly one ReleasedToPool history/event
+// entry describing the repaid portion.
 #[test]
-fn test_release_to_pool_partial_repayment_succeeds() {
+fn test_release_to_pool_partial_repayment_retains_residual_lock_state() {
     let (env, client, _admin, pool, issuer, usdc_id) = setup();
     let invoice_id = generate_invoice_id(&env, 1);
     let amount: u128 = 1_000_000_000;
 
     client.lock(&invoice_id, &amount, &issuer);
 
-    // Capture balances before release
+    let locked_at = client.get_locked_at(&invoice_id);
     let pool_balance_before = get_balance(&env, &usdc_id, &pool);
     let escrow_balance_before = get_balance(&env, &usdc_id, &client.address);
 
-    let partial: u128 = 500_000_000;
-    let result = client.release_to_pool(&invoice_id, &partial);
-    assert!(result);
-    assert_eq!(client.get_locked(&invoice_id), 0);
+    let partial: u128 = 400_000_000;
+    assert!(client.release_to_pool(&invoice_id, &partial));
 
-    // Verify pool received exactly `partial`, not the full locked `amount`
+    // The lock survives with only the outstanding principal and its original
+    // timestamp.
+    assert_eq!(client.get_locked(&invoice_id), amount - partial);
+    assert_eq!(client.get_locked_at(&invoice_id), locked_at);
+
+    // Only `partial` left escrow and reached the pool.
     let pool_balance_after = get_balance(&env, &usdc_id, &pool);
     let escrow_balance_after = get_balance(&env, &usdc_id, &client.address);
     assert_eq!(pool_balance_after - pool_balance_before, partial as i128);
@@ -1018,6 +1146,33 @@ fn test_release_to_pool_partial_repayment_succeeds() {
         escrow_balance_before - escrow_balance_after,
         partial as i128
     );
+
+    // History: the original Locked entry plus one ReleasedToPool entry for the
+    // partial amount (not the full lock).
+    let history = client.get_history(&invoice_id);
+    assert_eq!(history.len(), 2);
+    let lock_event = history.get(0).unwrap();
+    assert_eq!(lock_event.action, EscrowAction::Locked);
+    assert_eq!(lock_event.amount, amount);
+    let release_event = history.get(1).unwrap();
+    assert_eq!(release_event.invoice_id, invoice_id);
+    assert_eq!(release_event.action, EscrowAction::ReleasedToPool);
+    assert_eq!(release_event.amount, partial);
+    assert_eq!(release_event.timestamp, env.ledger().timestamp());
+    assert_eq!(release_event.caller, None);
+
+    assert_last_event_three(
+        &env,
+        "released_to_pool",
+        invoice_id.clone(),
+        pool.clone(),
+        partial,
+    );
+
+    // Repaying the residual clears the lock entirely.
+    assert!(client.release_to_pool(&invoice_id, &(amount - partial)));
+    assert_eq!(client.get_locked(&invoice_id), 0);
+    assert_eq!(client.get_locked_at(&invoice_id), 0);
 }
 
 #[test]
@@ -1688,6 +1843,9 @@ fn prop_escrow_balance_equals_sum_of_locked_records() {
     runner
         .run(&escrow_operations(), |operations| {
             let (env, client, _admin, pool, issuer, usdc_id) = setup();
+            // Coverage instrumentation increases host CPU cost for long property sequences.
+            // Keep all generated operations and invariants, without the default test budget.
+            env.budget().reset_unlimited();
             let invoice_ids = [
                 generate_invoice_id(&env, 200),
                 generate_invoice_id(&env, 201),
