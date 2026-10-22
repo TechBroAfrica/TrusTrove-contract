@@ -1896,7 +1896,12 @@ fn test_mark_defaulted_is_idempotent_without_duplicate_status_index_or_events() 
         Some(0)
     );
     assert_eq!(count_before.get(String::from_str(&env, "Funded")), Some(1));
-    let default_events_before = env
+
+    // SDK >=22: the event buffer resets after every top-level contract
+    // invocation. Capture events immediately after each mark_defaulted call,
+    // before any subsequent query resets the buffer.
+    assert!(client.mark_defaulted(&invoice_id));
+    let first_default_events: usize = env
         .events()
         .all()
         .iter()
@@ -1907,8 +1912,9 @@ fn test_mark_defaulted_is_idempotent_without_duplicate_status_index_or_events() 
             }
         })
         .count();
+    // The first call performs the real transition so exactly one event is emitted.
+    assert_eq!(first_default_events, 1);
 
-    assert!(client.mark_defaulted(&invoice_id));
     assert_eq!(client.get(&invoice_id).status, InvoiceStatus::Defaulted);
     assert!(client.has_status_membership(&InvoiceStatus::Defaulted, &invoice_id));
     assert!(!client.has_status_membership(&InvoiceStatus::Funded, &invoice_id));
@@ -1923,7 +1929,8 @@ fn test_mark_defaulted_is_idempotent_without_duplicate_status_index_or_events() 
         Some(0)
     );
 
-    let default_events_after_first_default = env
+    assert!(client.mark_defaulted(&invoice_id));
+    let second_default_events: usize = env
         .events()
         .all()
         .iter()
@@ -1934,32 +1941,13 @@ fn test_mark_defaulted_is_idempotent_without_duplicate_status_index_or_events() 
             }
         })
         .count();
-    assert_eq!(
-        default_events_after_first_default,
-        default_events_before + 1
-    );
+    // The second call is a no-op; no event must be emitted.
+    assert_eq!(second_default_events, 0);
 
-    assert!(client.mark_defaulted(&invoice_id));
     assert_eq!(client.get(&invoice_id).status, InvoiceStatus::Defaulted);
     assert_eq!(client.get_counts(), count_after_first_default);
     assert!(client.has_status_membership(&InvoiceStatus::Defaulted, &invoice_id));
     assert!(!client.has_status_membership(&InvoiceStatus::Funded, &invoice_id));
-
-    let default_events_after_second_default = env
-        .events()
-        .all()
-        .iter()
-        .filter(|(contract, topics, _)| {
-            *contract == client.address && {
-                let topic0: Symbol = Symbol::try_from_val(&env, &topics.get(0).unwrap()).unwrap();
-                topic0 == Symbol::new(&env, "invoice_defaulted")
-            }
-        })
-        .count();
-    assert_eq!(
-        default_events_after_second_default,
-        default_events_after_first_default
-    );
     assert_eq!(
         client.get_counts().get(String::from_str(&env, "Defaulted")),
         Some(1)
